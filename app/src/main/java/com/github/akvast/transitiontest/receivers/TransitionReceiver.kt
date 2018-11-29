@@ -9,7 +9,7 @@ import android.content.Context.NOTIFICATION_SERVICE
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
-import android.support.v4.app.NotificationCompat
+import androidx.core.app.NotificationCompat
 import com.github.akvast.transitiontest.R
 import com.github.akvast.transitiontest.database.Database
 import com.github.akvast.transitiontest.database.entities.UserActivity
@@ -18,11 +18,17 @@ import com.github.akvast.transitiontest.ui.vm.UserActivityTransitionViewModel
 import com.google.android.gms.location.ActivityRecognitionResult
 import com.google.android.gms.location.ActivityTransitionResult
 import com.google.android.gms.location.DetectedActivity
-import io.reactivex.Completable
-import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 
-class TransitionReceiver : BroadcastReceiver() {
+class TransitionReceiver : BroadcastReceiver(), CoroutineScope {
+
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main
 
     companion object {
         const val CHANNEL_ID = "default"
@@ -42,18 +48,18 @@ class TransitionReceiver : BroadcastReceiver() {
         val recognitionResult = ActivityRecognitionResult.extractResult(intent)
         recognitionResult?.mostProbableActivity?.let {
             if (it.type != DetectedActivity.STILL) {
-                Completable.fromAction {
+                launch(IO) {
                     Database.getUserActivityDao()
                             .insert(UserActivity().apply {
                                 type = it.type
                                 confidence = it.confidence
                             })
-                }.subscribeOn(Schedulers.io()).subscribe()
+                }
             }
         }
 
         val transitionResult = ActivityTransitionResult.extractResult(intent)
-        Completable.fromAction {
+        launch(IO) {
             transitionResult?.transitionEvents?.forEach {
                 Database.getUserActivityTransitionDao()
                         .insert(UserActivityTransition().apply {
@@ -61,7 +67,7 @@ class TransitionReceiver : BroadcastReceiver() {
                             transitionType = it.transitionType
                         })
             }
-        }.subscribeOn(Schedulers.io()).subscribe()
+        }
 
         transitionResult?.transitionEvents?.forEach {
             val viewModel = UserActivityTransitionViewModel(UserActivityTransition().apply {

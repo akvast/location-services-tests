@@ -1,22 +1,21 @@
 package com.github.akvast.transitiontest.database.entities
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.ColumnInfo
 import java.util.*
 
-
-@Entity(tableName = "activities")
-class UserActivity {
+@Entity(tableName = "locations")
+class LocationUpdate {
 
     @PrimaryKey(autoGenerate = true)
     var id: Long? = null
 
-    @ColumnInfo(name = "type")
-    var type: Int = 0
+    @ColumnInfo(name = "latitude")
+    var latitude: Double = 0.0
 
-    @ColumnInfo(name = "confidence")
-    var confidence: Int = 0
+    @ColumnInfo(name = "longitude")
+    var longitude: Double = 0.0
 
     @ColumnInfo(name = "date")
     var date = Date()

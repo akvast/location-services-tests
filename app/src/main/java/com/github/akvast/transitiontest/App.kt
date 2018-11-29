@@ -5,12 +5,8 @@ import android.app.Application
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import com.github.akvast.transitiontest.receivers.TransitionReceiver
-import com.google.android.gms.location.ActivityRecognition
-import com.google.android.gms.location.ActivityTransition
-import com.google.android.gms.location.DetectedActivity
-import com.google.android.gms.location.ActivityTransitionRequest
+import com.google.android.gms.location.*
 
 
 class App : Application() {
@@ -19,8 +15,6 @@ class App : Application() {
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
     }
-
-    private val tag = App::class.java.name
 
     override fun onCreate() {
         super.onCreate()
@@ -63,7 +57,7 @@ class App : Application() {
         val intent = Intent(this, TransitionReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        ActivityRecognition.getClient(this).requestActivityUpdates(30000, pendingIntent)
+        ActivityRecognition.getClient(this).requestActivityUpdates(0, pendingIntent)
         ActivityRecognition.getClient(this).requestActivityTransitionUpdates(request, pendingIntent)
     }
 

@@ -2,6 +2,7 @@
     package="com.github.akvast.transitiontest"
     android:installLocation="auto">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
 
     <application
@@ -19,6 +20,10 @@
 
         <receiver
             android:name=".receivers.TransitionReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".receivers.LocationReceiver"
             android:exported="false" />
 
         <activity android:name=".ui.MainActivity">
