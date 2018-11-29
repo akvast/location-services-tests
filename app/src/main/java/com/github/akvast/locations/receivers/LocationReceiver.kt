@@ -53,7 +53,7 @@ class LocationReceiver : BroadcastReceiver(), CoroutineScope {
                     })
         }
 
-        val builder = NotificationCompat.Builder(context, TransitionReceiver.CHANNEL_ID)
+        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_location_on_black_24dp)
                 .setColor(context.resources.getColor(R.color.colorPrimary))
                 .setContentTitle(context.getString(R.string.app_name))
