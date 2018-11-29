@@ -25,8 +25,8 @@ class LocationReceiver : BroadcastReceiver(), CoroutineScope {
         get() = Dispatchers.Main
 
     companion object {
-        const val CHANNEL_ID = "default"
-        const val CHANNEL_NAME = "Notifications"
+        const val CHANNEL_ID = "locations"
+        const val CHANNEL_NAME = "Location updates"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -54,7 +54,7 @@ class LocationReceiver : BroadcastReceiver(), CoroutineScope {
         }
 
         val builder = NotificationCompat.Builder(context, TransitionReceiver.CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_location_on_black_24dp)
                 .setColor(context.resources.getColor(R.color.colorPrimary))
                 .setContentTitle(context.getString(R.string.app_name))
                 .setDefaults(Notification.DEFAULT_LIGHTS or Notification.DEFAULT_VIBRATE)

@@ -31,8 +31,8 @@ class TransitionReceiver : BroadcastReceiver(), CoroutineScope {
         get() = Dispatchers.Main
 
     companion object {
-        const val CHANNEL_ID = "default"
-        const val CHANNEL_NAME = "Notifications"
+        const val CHANNEL_ID = "activity"
+        const val CHANNEL_NAME = "Activity Recognition"
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -75,7 +75,7 @@ class TransitionReceiver : BroadcastReceiver(), CoroutineScope {
                 transitionType = it.transitionType
             })
             val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setSmallIcon(R.drawable.ic_location_on_black_24dp)
                     .setColor(context.resources.getColor(R.color.colorPrimary))
                     .setContentTitle(context.getString(R.string.app_name))
                     .setDefaults(Notification.DEFAULT_LIGHTS or Notification.DEFAULT_VIBRATE)
