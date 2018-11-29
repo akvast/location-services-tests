@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.ui
+package com.github.akvast.locations.ui
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -8,12 +8,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.akvast.mvvm.utils.contentView
-import com.github.akvast.transitiontest.R
-import com.github.akvast.transitiontest.databinding.ActivityMainBinding
-import com.github.akvast.transitiontest.receivers.LocationReceiver
-import com.github.akvast.transitiontest.ui.adapter.MainAdapter
-import com.github.akvast.transitiontest.utils.openApplicationSettings
-import com.github.akvast.transitiontest.utils.withPermission
+import com.github.akvast.locations.R
+import com.github.akvast.locations.databinding.ActivityMainBinding
+import com.github.akvast.locations.receivers.LocationReceiver
+import com.github.akvast.locations.ui.adapter.MainAdapter
+import com.github.akvast.locations.utils.openApplicationSettings
+import com.github.akvast.locations.utils.withPermission
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 

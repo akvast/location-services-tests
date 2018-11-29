@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.github.akvast.transitiontest.ui.vm.UserActivityTransitionViewModel" />
+            type="com.github.akvast.locations.ui.vm.UserActivityTransitionViewModel" />
     </data>
 
     <FrameLayout

@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.database.converters
+package com.github.akvast.locations.database.converters
 
 import androidx.room.TypeConverter
 import java.util.*

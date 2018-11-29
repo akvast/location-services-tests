@@ -1,11 +1,11 @@
-package com.github.akvast.transitiontest
+package com.github.akvast.locations
 
 import android.annotation.SuppressLint
 import android.app.Application
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import com.github.akvast.transitiontest.receivers.TransitionReceiver
+import com.github.akvast.locations.receivers.TransitionReceiver
 import com.google.android.gms.location.*
 
 

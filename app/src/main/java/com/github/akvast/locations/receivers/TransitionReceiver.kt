@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.receivers
+package com.github.akvast.locations.receivers
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -10,11 +10,11 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import com.github.akvast.transitiontest.R
-import com.github.akvast.transitiontest.database.Database
-import com.github.akvast.transitiontest.database.entities.UserActivity
-import com.github.akvast.transitiontest.database.entities.UserActivityTransition
-import com.github.akvast.transitiontest.ui.vm.UserActivityTransitionViewModel
+import com.github.akvast.locations.R
+import com.github.akvast.locations.database.Database
+import com.github.akvast.locations.database.entities.UserActivity
+import com.github.akvast.locations.database.entities.UserActivityTransition
+import com.github.akvast.locations.ui.vm.UserActivityTransitionViewModel
 import com.google.android.gms.location.ActivityRecognitionResult
 import com.google.android.gms.location.ActivityTransitionResult
 import com.google.android.gms.location.DetectedActivity

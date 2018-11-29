@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.database
+package com.github.akvast.locations.database
 
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.room.Database
@@ -6,14 +6,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
-import com.github.akvast.transitiontest.App
-import com.github.akvast.transitiontest.database.converters.DateConverter
-import com.github.akvast.transitiontest.database.dao.LocationUpdateDao
-import com.github.akvast.transitiontest.database.dao.UserActivityDao
-import com.github.akvast.transitiontest.database.dao.UserActivityTransitionDao
-import com.github.akvast.transitiontest.database.entities.LocationUpdate
-import com.github.akvast.transitiontest.database.entities.UserActivity
-import com.github.akvast.transitiontest.database.entities.UserActivityTransition
+import com.github.akvast.locations.App
+import com.github.akvast.locations.database.converters.DateConverter
+import com.github.akvast.locations.database.dao.LocationUpdateDao
+import com.github.akvast.locations.database.dao.UserActivityDao
+import com.github.akvast.locations.database.dao.UserActivityTransitionDao
+import com.github.akvast.locations.database.entities.LocationUpdate
+import com.github.akvast.locations.database.entities.UserActivity
+import com.github.akvast.locations.database.entities.UserActivityTransition
 
 object Database {
 

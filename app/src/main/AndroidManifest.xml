@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.akvast.transitiontest"
+    package="com.github.akvast.locations"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
 
     <application
-        android:name=".App"
+        android:name="com.github.akvast.locations.App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,14 +19,14 @@
             android:value="@integer/google_play_services_version" />
 
         <receiver
-            android:name=".receivers.TransitionReceiver"
+            android:name="com.github.akvast.locations.receivers.TransitionReceiver"
             android:exported="false" />
 
         <receiver
-            android:name=".receivers.LocationReceiver"
+            android:name="com.github.akvast.locations.receivers.LocationReceiver"
             android:exported="false" />
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name="com.github.akvast.locations.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />

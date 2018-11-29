@@ -7,11 +7,11 @@
 
         <variable
             name="activity"
-            type="com.github.akvast.transitiontest.ui.MainActivity" />
+            type="com.github.akvast.locations.ui.MainActivity" />
 
         <variable
             name="adapter"
-            type="com.github.akvast.transitiontest.ui.adapter.MainAdapter" />
+            type="com.github.akvast.locations.ui.adapter.MainAdapter" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

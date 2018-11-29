@@ -1,17 +1,17 @@
-package com.github.akvast.transitiontest.ui.adapter
+package com.github.akvast.locations.ui.adapter
 
 import android.annotation.SuppressLint
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.github.akvast.mvvm.adapter.ViewModelAdapter
-import com.github.akvast.transitiontest.BR
-import com.github.akvast.transitiontest.R
-import com.github.akvast.transitiontest.database.Database
-import com.github.akvast.transitiontest.database.entities.LocationUpdate
-import com.github.akvast.transitiontest.database.entities.UserActivity
-import com.github.akvast.transitiontest.database.entities.UserActivityTransition
-import com.github.akvast.transitiontest.ui.vm.LocationUpdateViewModel
-import com.github.akvast.transitiontest.ui.vm.UserActivityTransitionViewModel
-import com.github.akvast.transitiontest.ui.vm.UserActivityViewModel
+import com.github.akvast.locations.BR
+import com.github.akvast.locations.R
+import com.github.akvast.locations.database.Database
+import com.github.akvast.locations.database.entities.LocationUpdate
+import com.github.akvast.locations.database.entities.UserActivity
+import com.github.akvast.locations.database.entities.UserActivityTransition
+import com.github.akvast.locations.ui.vm.LocationUpdateViewModel
+import com.github.akvast.locations.ui.vm.UserActivityTransitionViewModel
+import com.github.akvast.locations.ui.vm.UserActivityViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlin.coroutines.CoroutineContext

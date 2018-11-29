@@ -7,7 +7,7 @@ android {
     compileSdkVersion 28
     
     defaultConfig {
-        applicationId "com.github.akvast.transitiontest"
+        applicationId "com.github.akvast.locations"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1

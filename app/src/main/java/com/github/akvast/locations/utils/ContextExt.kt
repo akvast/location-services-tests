@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.utils
+package com.github.akvast.locations.utils
 
 import android.content.Context
 import android.content.Intent

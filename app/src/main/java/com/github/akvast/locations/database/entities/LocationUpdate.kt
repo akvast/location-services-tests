@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.database.entities
+package com.github.akvast.locations.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

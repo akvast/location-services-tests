@@ -1,10 +1,10 @@
-package com.github.akvast.transitiontest.database.dao
+package com.github.akvast.locations.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.github.akvast.transitiontest.database.entities.LocationUpdate
+import com.github.akvast.locations.database.entities.LocationUpdate
 
 @Dao
 interface LocationUpdateDao {

@@ -1,4 +1,4 @@
-package com.github.akvast.transitiontest.utils
+package com.github.akvast.locations.utils
 
 import android.app.Activity
 import androidx.core.app.ActivityCompat

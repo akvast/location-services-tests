@@ -1,7 +1,7 @@
-package com.github.akvast.transitiontest.ui.vm
+package com.github.akvast.locations.ui.vm
 
 import android.text.format.DateUtils
-import com.github.akvast.transitiontest.database.entities.UserActivity
+import com.github.akvast.locations.database.entities.UserActivity
 import com.google.android.gms.location.DetectedActivity
 import java.text.DateFormat
 
