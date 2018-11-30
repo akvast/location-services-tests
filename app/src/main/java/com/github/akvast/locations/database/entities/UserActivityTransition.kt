@@ -21,4 +21,7 @@ class UserActivityTransition {
     @ColumnInfo(name = "date")
     var date = Date()
 
+    @ColumnInfo(name = "elapsedRealTime")
+    var elapsedRealTimeNanos = 0L
+
 }

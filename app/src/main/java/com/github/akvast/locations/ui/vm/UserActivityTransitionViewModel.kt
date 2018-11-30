@@ -1,6 +1,7 @@
 package com.github.akvast.locations.ui.vm
 
 import android.text.format.DateUtils
+import com.github.akvast.locations.App
 import com.github.akvast.locations.database.entities.UserActivityTransition
 import com.google.android.gms.location.ActivityTransition
 import com.google.android.gms.location.DetectedActivity
@@ -25,10 +26,16 @@ class UserActivityTransitionViewModel(private val transition: UserActivityTransi
         else -> "UNKNOWN"
     }
 
-    fun date() = DateUtils.formatSameDayTime(
+    fun date() = DateUtils.formatDateTime(
+            App.context,
             transition.date.time,
-            System.currentTimeMillis(),
-            DateFormat.MEDIUM,
-            DateFormat.SHORT)!!
+            DateUtils.FORMAT_SHOW_DATE or
+                    DateUtils.FORMAT_SHOW_TIME or
+                    DateUtils.FORMAT_NUMERIC_DATE)!!
+
+    fun realDate() = DateUtils.formatDateTime(
+            App.context,
+            transition.date.time - transition.elapsedRealTimeNanos / 1000000L,
+            DateUtils.FORMAT_SHOW_TIME)!!
 
 }

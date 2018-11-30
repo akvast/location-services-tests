@@ -65,6 +65,7 @@ class TransitionReceiver : BroadcastReceiver(), CoroutineScope {
                         .insert(UserActivityTransition().apply {
                             activityType = it.activityType
                             transitionType = it.transitionType
+                            elapsedRealTimeNanos = it.elapsedRealTimeNanos
                         })
             }
         }

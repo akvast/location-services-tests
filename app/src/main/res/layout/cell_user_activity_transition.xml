@@ -36,8 +36,8 @@
                     style="@style/Base.TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{vm.transitionType}"
-                    tools:text="ENTER" />
+                    android:text='@{vm.transitionType + " at " + vm.realDate}'
+                    tools:text="ENTER at 12:12" />
 
             </LinearLayout>
 

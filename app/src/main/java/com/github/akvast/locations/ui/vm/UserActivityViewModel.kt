@@ -1,6 +1,7 @@
 package com.github.akvast.locations.ui.vm
 
 import android.text.format.DateUtils
+import com.github.akvast.locations.App
 import com.github.akvast.locations.database.entities.UserActivity
 import com.google.android.gms.location.DetectedActivity
 import java.text.DateFormat
@@ -20,10 +21,11 @@ class UserActivityViewModel(private val userActivity: UserActivity) {
 
     fun confidence() = "${userActivity.confidence}%"
 
-    fun date() = DateUtils.formatSameDayTime(
+    fun date() = DateUtils.formatDateTime(
+            App.context,
             userActivity.date.time,
-            System.currentTimeMillis(),
-            DateFormat.MEDIUM,
-            DateFormat.SHORT)!!
+            DateUtils.FORMAT_SHOW_DATE or
+                    DateUtils.FORMAT_SHOW_TIME or
+                    DateUtils.FORMAT_NUMERIC_DATE)!!
 
 }
